@@ -6,13 +6,13 @@
 #    By: lschrafs <lschrafs@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 08:55:21 by lschrafs          #+#    #+#              #
-#    Updated: 2022/10/19 22:08:33 by lschrafs         ###   ########.fr        #
+#    Updated: 2022/10/21 15:33:25 by lschrafs         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 				= 	find
+NAME 				= 	easyfind
 COMPILER 		= 	c++
-CFLAGS 			= 	-Wall -Wextra -Werror -std=c++98
+CFLAGS 			= 	-Wall -Wextra -Werror
 
 SRCS_PATH 	= 	./src/
 
