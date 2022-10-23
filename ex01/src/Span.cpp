@@ -6,7 +6,7 @@
 /*   By: lschrafs <lschrafs@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 15:37:40 by lschrafs          #+#    #+#             */
-/*   Updated: 2022/10/22 11:43:18 by lschrafs         ###   ########.fr       */
+/*   Updated: 2022/10/23 20:03:55 by lschrafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void Span::printContents(void) const {
 }
 
 unsigned int Span::shortestSpan(void) const {
-  if (this->size_ < 2) throw NoSpanPossibleException();
+  if (this->contents_.size() < 2) throw NoSpanPossibleException();
   std::vector<int> tmp = this->contents_;
   std::sort(tmp.begin(), tmp.end());
   std::vector<int>::const_iterator it = tmp.begin();
@@ -64,7 +64,7 @@ unsigned int Span::shortestSpan(void) const {
 }
 
 unsigned int Span::longestSpan(void) const {
-  if (this->size_ < 2) throw NoSpanPossibleException();
+  if (this->contents_.size() < 2) throw NoSpanPossibleException();
   int max = *(std::max_element(this->contents_.begin(), this->contents_.end()));
   int min = *(std::min_element(this->contents_.begin(), this->contents_.end()));
   return max - min;
