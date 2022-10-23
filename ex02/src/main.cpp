@@ -6,7 +6,7 @@
 /*   By: lschrafs <lschrafs@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 15:08:40 by lschrafs          #+#    #+#             */
-/*   Updated: 2022/10/23 18:17:29 by lschrafs         ###   ########.fr       */
+/*   Updated: 2022/10/23 18:25:31 by lschrafs         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,58 @@
 #include <string>
 #include <list>
 
-int main(void) {  
+int main(void) {
+  // PDF TESTS
+  {
+    std::cout << BLUE << "----- PDF TEST -----" << std::endl;
+    MutantStack<int> mstack;
+    mstack.push(5);
+    mstack.push(17);
+    std::cout << mstack.top() << std::endl;
+    mstack.pop();
+    std::cout << mstack.size() << std::endl;
+    mstack.push(3);
+    mstack.push(5);
+    mstack.push(737);
+    //[...]
+    mstack.push(0);
+    MutantStack<int>::iterator it = mstack.begin();
+    MutantStack<int>::iterator ite = mstack.end();
+    ++it;
+    --it;
+    while (it != ite)
+    {
+    std::cout << *it << std::endl;
+    ++it;
+    }
+    std::stack<int> s(mstack);
+  }
+  // Again, but with list, as pdf said...
+  {
+    std::cout << BLUE << "----- PDF TESTS (with list) -----" << std::endl;
+    std::list<int> list;
+    list.push_back(5);
+    list.push_back(17);
+    std::cout << *(--list.end()) << std::endl;
+    list.pop_back();
+    std::cout << list.size() << std::endl;
+    list.push_back(3);
+    list.push_back(5);
+    list.push_back(737);
+    //[...]
+    list.push_back(0);
+    std::list<int>::iterator it = list.begin();
+    std::list<int>::iterator ite = list.end();
+    ++it;
+    --it;
+    while (it != ite)
+    {
+    std::cout << *it << std::endl;
+    ++it;
+    }
+  }
+  
+  // MY TESTS
   std::cout << YELLOW << "----- original stack -----" << std::endl;
 
   std::stack<int> stack;
